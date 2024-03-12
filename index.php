@@ -26,7 +26,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
-        
+
         if(empty($username)){
             echo"Please enter a username";
         }
@@ -35,7 +35,7 @@
         }
         else{
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO lucastest1db.users (user, password)
+            $sql = "INSERT INTO $db_name.users (user, password)
                     VALUES ('$username', '$hash')";
             
             try{

@@ -1,7 +1,7 @@
 <?php
     include("database.php");
 
-    $sql = "SELECT * FROM lucastest1db.users";
+    $sql = "SELECT * FROM $db_name.users";
     $result = mysqli_query($conn, $sql);
 
     if(mysqli_num_rows($result) > 0){

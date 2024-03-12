@@ -5,7 +5,7 @@
     $password = "rock3";
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO lucastest1db.users (user, password)
+    $sql = "INSERT INTO $db_name.users (user, password)
             VALUES ('$username', '$hash')";
 
     try{
